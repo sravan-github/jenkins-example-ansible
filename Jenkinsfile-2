@@ -1,7 +1,7 @@
 pipeline {
-  agent { label 'linux' }
+  agent any
   environment {
-   ANSIBLE_PRIVATE_KEY=credentials('mariadb-private-key') 
+   ANSIBLE_PRIVATE_KEY=credentials('ansible-key') 
   }
   stages {
     stage('Hello') {
