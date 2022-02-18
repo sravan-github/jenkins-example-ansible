@@ -1,0 +1,8 @@
+---
+- name: install Java
+  apt:
+    name: "{{ item }}"
+    state: latest
+  with_items: "{{ packages_install }}"
+  tags:
+   - install
