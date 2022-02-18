@@ -8,6 +8,7 @@ pipeline {
       steps {
         sh '''
             git clone https://github.com/sravan-github/jenkins-example-ansible.git
+            ls -l
             ansible-playbook -i inventory/mariadb.hosts --private-key=$ANSIBLE_PRIVATE_KEY play.yml
             '''
       }
