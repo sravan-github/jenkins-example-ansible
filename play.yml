@@ -1,0 +1,26 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: Run shell
+      shell: uptime
+      register: out
+
+    - debug: var=out.stdout_lines
+
+    - name: run shell
+      shell: hostname
+      register: host
+
+    - debug: var=host.stdout_lines
+
+    - name: Update apt cache and make sure Vim, Curl and Unzip are installed
+      apt:
+        name: "{{ item }}"
+        update_cache: yes
+      loop:
+        - vim
+        - curl
+        - unzip
+        - apache2
