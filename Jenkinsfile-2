@@ -9,7 +9,8 @@ pipeline {
         //sh 'git clone https://github.com/sravan-github/jenkins-example-ansible.git'
         //sh 'ansible-playbook -i inventory/mariadb.hosts --private-key=$ANSIBLE_PRIVATE_KEY play.yml'
         sh 'git clone https://github.com/sravan-github/ansible-role.git'
-        sh 'cd ansible-role & ls -l'
+        sh 'cd ansible-role'
+        sh 'ls -l'
       }
     }
   }
