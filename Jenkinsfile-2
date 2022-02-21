@@ -2,15 +2,15 @@ pipeline {
   //agent any
   agent {
   docker { 
-            image 'sravangcpdocker/toolkit:3'
+            image 'sravangcpdocker/ansible-gcp:1'
             args '-u root:root'
-        }
+          }
         }
   environment {
    ANSIBLE_PRIVATE_KEY=credentials('ansible-key') 
   }
   stages {
-    stage('Hello') {
+    stage('Ansible-playbook') {
       steps {
         sh '''
             git clone https://github.com/sravan-github/jenkins-example-ansible.git
