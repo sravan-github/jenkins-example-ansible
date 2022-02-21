@@ -15,7 +15,7 @@ pipeline {
         sh '''
             git clone https://github.com/sravan-github/jenkins-example-ansible.git
             ls -l
-            ansible-vault decrypt testuser.pme --vault-password $ANSIBLE_PRIVATE_KEY --output tesuser1.pem
+            ansible-vault decrypt testuser.pme --vault-password-password $ANSIBLE_PRIVATE_KEY --output tesuser1.pem
             ls -l
             #ansible-playbook -i inventory/mariadb.hosts --private-key=$ANSIBLE_PRIVATE_KEY play.yml
             ansible-playbook -i inventory/mariadb.hosts --private-key=tesuser1.pem play.yml
