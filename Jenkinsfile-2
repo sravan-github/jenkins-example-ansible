@@ -20,7 +20,7 @@ pipeline {
             ls -l
             #ansible-playbook -i inventory/mariadb.hosts --private-key=$ANSIBLE_PRIVATE_KEY play.yml
             #ansible-playbook -i inventory/mariadb.hosts --private-key=tesuser1.pem install-book.yml
-            ansible-playbook -i inventory/ --private-key=tesuser1.pem install-book.yml
+            ansible-playbook  --private-key=tesuser1.pem install-book.yml
             '''
       }
     }
