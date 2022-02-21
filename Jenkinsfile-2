@@ -7,7 +7,7 @@ pipeline {
           }
         }
   environment {
-   ANSIBLE_PRIVATE_KEY=credentials('ansible-key') 
+   ANSIBLE_PRIVATE_KEY=credentials('password') 
   }
   stages {
     stage('Ansible-playbook') {
@@ -15,7 +15,8 @@ pipeline {
         sh '''
             git clone https://github.com/sravan-github/jenkins-example-ansible.git
             ls -l
-            pwd
+            ansible-vault decrypt key.json --vault-password-file $passwd --output key2.json
+            ls -l
             ansible-playbook -i inventory/mariadb.hosts --private-key=$ANSIBLE_PRIVATE_KEY play.yml
             '''
       }
