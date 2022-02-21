@@ -3,7 +3,7 @@ plugin: gcp_compute
 projects:
   - gcp-practice-project-340110
 auth_kind: serviceaccount
-service_account_file: /opt/ansible/inventory/service-account1.json
+service_account_file: ./inventory/key1.json
 keyed_groups:
   - key: labels
     prefix: label
