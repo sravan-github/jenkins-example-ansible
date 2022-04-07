@@ -13,6 +13,7 @@ agent {
           git --version
           ansible-playbook --version
           ansible-galaxy --version
+          rm -rf jenkins-example-ansible
           git clone https://github.com/sravan-github/jenkins-example-ansible.git
           ls -l
         '''
