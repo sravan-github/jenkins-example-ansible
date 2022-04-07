@@ -20,10 +20,9 @@ agent {
       }
     }
   }
-  }
    post {
         always {
         	cleanWs deleteDirs: true
         }
     }
-
+}
