@@ -4,6 +4,7 @@ agent {
             image 'sravangcpdocker/ansible-gcp:1'
             args '-u root:root'
           }
+         }
   stages {
     stage('Hello') {
       steps {
