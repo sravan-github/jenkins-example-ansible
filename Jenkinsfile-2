@@ -19,7 +19,7 @@ pipeline {
             ansible-vault decrypt testuser.pem --vault-password-file $ANSIBLE_PRIVATE_KEY --output tesuser1.pem
             ls -l
             #ansible-playbook -i inventory/mariadb.hosts --private-key=$ANSIBLE_PRIVATE_KEY play.yml
-            ansible-playbook -i inventory/mariadb.hosts --private-key=tesuser1.pem install-book.yml
+            ansible-playbook -i inventory/mariadb.hosts --private-key=user1.pem install-book.yml
             '''
       }
     }
