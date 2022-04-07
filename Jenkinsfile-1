@@ -6,6 +6,7 @@ pipeline {
       steps {
         sh '''
           ansible --version
+          git --version
           ansible-playbook --version
           ansible-galaxy --version
         '''
