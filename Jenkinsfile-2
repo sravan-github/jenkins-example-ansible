@@ -7,8 +7,8 @@ pipeline {
           }
         }
  // environment {
-   ANSIBLE_PRIVATE_KEY=credentials('password') 
-  }//
+//   ANSIBLE_PRIVATE_KEY=credentials('password') 
+ // }//
   stages {
     stage('Ansible-playbook') {
       steps {
