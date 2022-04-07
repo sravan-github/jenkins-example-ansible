@@ -13,7 +13,7 @@ agent {
           git --version
           ansible-playbook --version
           ansible-galaxy --version
-          git clone 'https://github.com/sravan-github/jenkins-example-ansible.git'
+          git clone 'https://github.com/sravan-github/jenkins-example-ansible.git/'
         '''
       }
     }
