@@ -1,6 +1,9 @@
 pipeline {
- // agent {label 'linux'}
-
+agent {
+  docker { 
+            image 'sravangcpdocker/ansible-gcp:1'
+            args '-u root:root'
+          }
   stages {
     stage('Hello') {
       steps {
