@@ -13,6 +13,7 @@ pipeline {
     stage('Ansible-playbook') {
       steps {
         sh '''
+            apt install python -y
             rm -rf jenkins-example-ansible
             git clone https://github.com/sravan-github/jenkins-example-ansible.git
             ls -l
