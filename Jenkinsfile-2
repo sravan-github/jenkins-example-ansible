@@ -13,6 +13,7 @@ pipeline {
     stage('Ansible-playbook') {
       steps {
         sh '''
+            rm -rf jenkins-example-ansible
             git clone https://github.com/sravan-github/jenkins-example-ansible.git
             ls -l
             ansible-vault decrypt inventory/key.json --vault-password-file $ANSIBLE_PRIVATE_KEY --output key1.json
@@ -24,9 +25,9 @@ pipeline {
       }
     }
   }
-  post {
+ /* post {
         always {
         	cleanWs deleteDirs: true
         }
-    }
+    } */
 }
