@@ -6,9 +6,9 @@ pipeline {
             args '-u root:root'
           }
         }
-  environment {
+ // environment {
    ANSIBLE_PRIVATE_KEY=credentials('password') 
-  }
+  }//
   stages {
     stage('Ansible-playbook') {
       steps {
